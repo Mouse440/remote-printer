@@ -1,0 +1,100 @@
+SCE REMOTE PRINTER V-3.0
+
+This software is a custom software built to enable users to print remotely by logging into an existing portal site. 
+The portal site is not included in this software and is a separated project. 
+
+Set up requires admin to know some basic Unix command such as cd, ls, chown, chmod. Please also have the following
+technologies on your Unix/Mac OS machine. 
+
+Dependencies:
+1) xpdf - http://www.foolabs.com/xpdf/
+	To install:
+		sudo apt-get install xpdf
+2) libcups2-dev
+	Run the following:
+		sudo apt-get install libcups2-dev
+Extra) cpdf - http://community.coherentpdf.com/
+	A binary file of this program should be included in this package, if not please visit cpdf website to download the binaries.
+	Make sure to update the cpdf path in the Config file once you have included the cpdf binaries in this package.
+
+Out of service (This section is for information purposes only, no action required):
+Imagick - http://php.net/manual/en/book.imagick.php 
+		sudo apt-get install php5-imagick
+		sudo service apache2 reload
+	
+
+Procedures:
+
+Pre-run: #### IMPORTANT ####
+Inside index.php, please set DEV_MODE and SOFFICE_NEEDED accordingly. DEV_MODE should be true when developing, and SOFFICE_NEEDED should be true when using a Mac OS 
+
+1) CUPS 1.7.2 Configuration @ localhost:631/admin
+	.Set a working printer as 'server default'
+	To check if printer is defaulted. Run
+	lpstat -d
+	The result should say something like this
+	"system default destination: Photosmart-C3100-series"
+
+2) File system configuration 
+	Run the following command with your username:
+
+		mkdir temporary_file_storage
+		sudo chown username:www-data temporary_file_storage && sudo chmod 775 temporary_file_storage 
+		mkdir spool
+		sudo chown username:www-data spool && sudo chmod 775 spool
+
+	The following folders should have the equivalent of the following permissions:
+	
+		drwxrwxr—x   2 username   www-data    68 Jun  7 15:11 temporary_file_storage
+		drwxrwxr-x   2 username   www-data  4096 Jun 29 22:06 spool
+
+	
+	There should also be a job-state binary file inside php/job_state_reporter/ 
+
+	Note: Apache in Ubuntu runs as www-data; Mac Apache runs as _www
+	
+	Look inside php/config/Config.php to configure application options, including database credentials, etc.
+
+3) Apache/PHP increase upload_max_filesize:
+In order to accommodate file upload of 10MB, you need to manual increase that size in your php.ini. In order to do that, do the following:
+		cd /etc/php5/apache2/
+		sudo gedit php.ini
+	
+	Find the following key words: upload_max_filesize and post_max_size. Change the values of these options to 10M and 11M respectively. 	     Once done, make sure to save and exit. Now restart apache2 by running the following command.
+	
+	Run the following command, you might run into this error:
+	AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName'     		directive globally to suppress this message
+
+		sudo /etc/init.d/apache2 restart
+	
+	If you are experiencing this error. Do the following 
+		sudo gedit /etc/apache2/apache2.conf
+	then add 
+		ServerName localhost
+	at the end of the file, save then exit. Now try restarting again. If this fails, you will need to look up how to solve this online.
+
+
+4) Databases setup: 	
+The database scheme is available in this project at php/config/ - to keep this up-to-date, please try to get the database from SCE server and commit to master branch.
+
+	To install database:
+		Open your mysql workbench.
+		Log into your root account.	
+		Create a new user in MySQL. 
+		Hit "Users and Privileges" in left menu. 
+		Then hit "Add Account" at bottom left. 
+		Enter the following for each section:
+
+		  Login Name: Printer 
+		  Authentication Type: Standard
+		  Limit to Hosts Match: localhost
+		  Password: @sce123 
+
+		Then in the Administrative Roles tab, hit DBA.
+		Done. Now you need to run the script to create the database. To do this open the sql script in /path/to/sce_printer/php/config/
+		and execute it in mysql workbench. If you don't see anything pop up, refresh your schemas. 
+
+	Note, you may choose your own login name and password; just be sure to match them in Config.php
+
+Application corner Case: 
+.docx require “.docx” in name to work.

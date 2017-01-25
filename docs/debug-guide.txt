@@ -1,0 +1,9 @@
+Test for:
+Default printer?
+error reporting?
+success? 
+
+
+
+ssh duy@sce.engr.sjsu.edu
+cd $WEB

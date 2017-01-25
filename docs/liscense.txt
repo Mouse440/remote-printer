@@ -1,0 +1,3 @@
+Duy Nguyen
+
+This project is created by Duy Nguyen and is copyrighted under Society of Engineering(SCE) as of June 8, 2014. It may not be distributed without the permission of SCE and the author.

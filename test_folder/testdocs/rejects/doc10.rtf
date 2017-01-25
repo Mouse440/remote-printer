@@ -1,0 +1,205 @@
+{\rtf1\ansi\ansicpg10000\lnbrkrule
+{\fonttbl
+{\f1\fnil\fcharset1\fprq0 Arial;}
+{\f2\fnil\fcharset1\fprq0 \uc1\u-211_\u-205_ \u-208_\u12468_\u12471_\u12483_\u12463_;}
+{\f3\fnil\fcharset2\fprq0 Wingdings;}
+}
+{\colortbl;
+\red102\green0\blue0;
+\red0\green0\blue0;
+\red178\green51\blue0;
+\red153\green51\blue0;
+\red0\green0\blue255;
+}
+{\stylesheet
+{\s1\li740\fi-740\fs56\lang1033\level1 heading 1;}
+{\s2\li1430\fi-688\fs48\lang1033\level2 heading 2;}
+{\s3\li2170\fi-738\fs40\lang1033\level3 heading 3;}
+{\s4\li2878\fi-690\fs32\lang1033\level4 heading 4;}
+{\s5\li3618\fi-738\fs21\lang1033\level5 heading 5;}
+{\s6\li4338\fi-738\fs20\lang1033\level6 heading 6;}
+{\s7\li5058\fi-738\fs20\lang1033\level7 heading 7;}
+{\s8\li5778\fi-738\fs20\lang1033\level8 heading 8;}
+{\s9\li6498\fi-738\fs20\lang1033\level9 heading 9;}
+}
+\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\b\dbch\af2\loch\f1\cf1 CS 149: Operating Systems}{\dbch\af2\loch\f1\fs72\cf1 \line }{\dbch\af2\loch\f1\fs48\cf1 February 3 Class }{\dbch\af2\loch\f1\fs48\cf1 Meeting\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs40\cf2 Department of Computer Science\line San Jose State University\line }{\dbch\af2\loch\f1\fs20\cf2 \line }{\dbch\af2\loch\f1\fs40\cf2 Spring }{\dbch\af2\loch\f1\fs40\cf2 2015}{\dbch\af2\loch\f1\fs40\cf2 \line Instructor: Ron Mak\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li0\fi0\qc {\ul\dbch\af2\loch\f1\fs40\cf2 www.cs.sjsu.edu/~mak}{\dbch\af2\loch\f1\fs40\cf2  \par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Processes\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 A process is basically an \line }{\dbch\af2\loch\f1\fs56\cf3 abstraction of a running program}{\dbch\af2\loch\f1\fs56\cf2 .\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 The most central concept }{\dbch\af2\loch\f1\fs56\cf2 \line in }{\dbch\af2\loch\f1\fs56\cf2 any operating system.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 Each process runs in its own address space.\line _\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Context Switching\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Contents of a Process Control Block (PCB)\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Process States\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li840\fi-840 {\pntext\pard\dbch\af2\loch\f3\fs28 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs28{\pntxtb o}}{\dbch\af2\loch\f1\fs40\cf3 Running \par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1463\fi-720 {\pntext\pard\dbch\af2\loch\f3\fs27 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs27{\pntxtb o}}{\dbch\af2\loch\f1\fs36\cf2 Actually using the CPU at that instant.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs18\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li840\fi-840 {\pntext\pard\dbch\af2\loch\f3\fs28 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs28{\pntxtb o}}{\dbch\af2\loch\f1\fs40\cf3 Ready \par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1463\fi-720 {\pntext\pard\dbch\af2\loch\f3\fs27 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs27{\pntxtb o}}{\dbch\af2\loch\f1\fs36\cf2 Runnable, but temporarily stopped to let another process run.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs18\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li840\fi-840 {\pntext\pard\dbch\af2\loch\f3\fs28 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs28{\pntxtb o}}{\dbch\af2\loch\f1\fs40\cf3 Blocked \par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1463\fi-720 {\pntext\pard\dbch\af2\loch\f3\fs27 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs27{\pntxtb o}}{\dbch\af2\loch\f1\fs36\cf2 Unable to run until some external event happens.\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Process Scheduler\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs34 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs34{\pntxtb o}}{\dbch\af2\loch\f1\cf2 Transitions 2 and 3 are caused by the }{\dbch\af2\loch\f1\cf2 \line }{\dbch\af2\loch\f1\cf3 process }{\dbch\af2\loch\f1\cf3 scheduler}{\dbch\af2\loch\f1\cf2 .\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs30 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs30{\pntxtb n}}{\dbch\af2\loch\f1\cf2 A part of the operating system.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs30 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs30{\pntxtb n}}{\dbch\af2\loch\f1\cf2 A process does not know about the transitions}{\dbch\af2\loch\f1\cf2 .}{\dbch\af2\loch\f1\fs20\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs34 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs34{\pntxtb o}}{\dbch\af2\loch\f1\cf2 Transition 2 can happen at the end of a time slice}{\dbch\af2\loch\f1\cf2 .}{\dbch\af2\loch\f1\fs20\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs34 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs34{\pntxtb o}}{\dbch\af2\loch\f1\cf2 Transition 3 can happen when }{\dbch\af2\loch\f1\cf2 it\uc1\u8217\'d5s }{\dbch\af2\loch\f1\cf2 the }{\dbch\af2\loch\f1\cf2 process\uc1\u8217\'d5s }{\dbch\af2\loch\f1\cf2 turn again to run.\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Process Scheduling Goals\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 The process scheduler decides }{\dbch\af2\loch\f1\fs56\cf3 which process can run}{\dbch\af2\loch\f1\fs56\cf2 , i.e., which process can have the CPU.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 The goal is to keep all parts of the \line computer system }{\dbch\af2\loch\f1\fs56\cf3 as busy as possible}{\dbch\af2\loch\f1\fs56\cf2 . }{\dbch\af2\loch\f1\fs56\cf2 \par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 Which scheduling algorithm to use depends on \par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 The type of system\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 How it}{\dbch\af2\loch\f1\fs48\cf2\lang1041 \uc1\u8217\'d5}{\dbch\af2\loch\f1\fs48\cf2 s used\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 What policies are in }{\dbch\af2\loch\f1\fs48\cf2 place}{\dbch\af2\loch\f1\fs48\cf2 \par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Process Behavior\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 A process may be:\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 Computing: using the CPU\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 Performing I/O\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 A }{\dbch\af2\loch\f1\fs56\cf3 compute-bound }{\dbch\af2\loch\f1\fs56\cf2 process spends most of its time computing.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf3 Long CPU bursts }{\dbch\af2\loch\f1\fs48\cf2 and infrequent I/O waits.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 An }{\dbch\af2\loch\f1\fs56\cf3 I/O-bound }{\dbch\af2\loch\f1\fs56\cf2 process spends most of its time waiting for I/O operations to complete.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf3 Long I/O waits }{\dbch\af2\loch\f1\fs48\cf2 punctuated by short CPU bursts}{\dbch\af2\loch\f1\fs48\cf2 .}{\dbch\af2\loch\f1\fs48\cf2 \par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Process Behavior}{\i\dbch\af2\loch\f1\fs64\cf1 , cont}{\i\dbch\af2\loch\f1\fs64\cf1\lang1041 \uc1\u8217\'d5}{\i\dbch\af2\loch\f1\fs64\cf1 d\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 As CPUs become faster relative to disks:\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 Programs are becoming more I/O bound.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 Scheduling I/O-bound processes \line becomes more important.\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Process Behavior}{\i\dbch\af2\loch\f1\fs64\cf1 , cont}{\i\dbch\af2\loch\f1\fs64\cf1\lang1041 \uc1\u8217\'d5}{\i\dbch\af2\loch\f1\fs64\cf1 d\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 Histogram of CPU burst durations.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf3 CPU-bound process: }{\dbch\af2\loch\f1\fs48\cf2 A few long bursts.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf3 I/O bound process: }{\dbch\af2\loch\f1\fs48\cf2 Many short bursts.\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 When to Schedule\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 When scheduling is }{\dbch\af2\loch\f1\fs56\cf3 absolutely required}{\dbch\af2\loch\f1\fs56\cf2 :\par 
+}\pard\plain\ltrpar\s8\li5778\fi-738\fs20\lang1033\li5058 {\dbch\af2\loch\f1\cf2 \par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 When a process exits.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 When a process blocks on I/O, or on a semaphore.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 When scheduling }{\dbch\af2\loch\f1\fs56\cf3 usually done }{\dbch\af2\loch\f1\fs56\cf2 \line (although not absolutely required)}{\dbch\af2\loch\f1\fs56\cf2 :\par 
+}\pard\plain\ltrpar\s8\li5778\fi-738\fs20\lang1033\li5058 {\dbch\af2\loch\f1\cf2 \par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 When a new process is created.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 When an I/O interrupt occurs.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 When a clock interrupt occurs}{\dbch\af2\loch\f1\fs48\cf2 .}{\dbch\af2\loch\f1\fs48\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\dbch\af2\loch\f1\fs56\cf2 \par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Types of Scheduling Algorithms\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf3 Preemptive\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 Each process is assigned a time interval to run, \line called the }{\dbch\af2\loch\f1\fs48\cf3 quantum }{\dbch\af2\loch\f1\fs48\cf2 or }{\dbch\af2\loch\f1\fs48\cf3 time slice}{\dbch\af2\loch\f1\fs48\cf2 .\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 At the end of a process}{\dbch\af2\loch\f1\fs48\cf2\lang1041 \uc1\u8217\'d5}{\dbch\af2\loch\f1\fs48\cf2 s time quantum, \line the scheduler suspends the process and \line schedules another process to run.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf3 Non-preemptive\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 The scheduler allows a process to run until it blocks:\par 
+}\pard\plain\ltrpar\s4\li2878\fi-690\fs32\lang1033\li2170\fi-738 {\pntext\pard\dbch\af2\loch\f3\fs26 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs26{\pntxtb o}}{\dbch\af2\loch\f1\fs40\cf2 Waiting for I/O.\par 
+}\pard\plain\ltrpar\s4\li2878\fi-690\fs32\lang1033\li2170\fi-738 {\pntext\pard\dbch\af2\loch\f3\fs26 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs26{\pntxtb o}}{\dbch\af2\loch\f1\fs40\cf2 Waiting for another process.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 The process voluntarily releases the CPU}{\dbch\af2\loch\f1\fs48\cf2 .}{\dbch\af2\loch\f1\fs48\cf2 \par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Scheduling Criteria\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf3 CPU utilization\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 Keep the CPU as busy as possible.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf3 Throughput\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 Number of processes that complete their execution \line per time unit.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf3 Turnaround time\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 The amount of elapsed time from when a process \line enters the ready queue to when it completes }{\dbch\af2\loch\f1\fs48\cf2 execution}{\dbch\af2\loch\f1\fs48\cf2 .\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Scheduling Criteria}{\i\dbch\af2\loch\f1\fs64\cf1 , }{\i\dbch\af2\loch\f1\fs64\cf1 cont\uc1\u8217\'d5d}{\i\dbch\af2\loch\f1\fs64\cf1 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf3 Waiting time\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 Amount of time a process waits in the ready }{\dbch\af2\loch\f1\fs48\cf2 queue.\par 
+}\pard\plain\ltrpar\s7\li5058\fi-738\fs20\lang1033\li4338 {\dbch\af2\loch\f1\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf3 Response }{\dbch\af2\loch\f1\fs56\cf3 time\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 In an interactive environment, the amount of }{\dbch\af2\loch\f1\fs48\cf2 \line elapsed }{\dbch\af2\loch\f1\fs48\cf2 time }{\dbch\af2\loch\f1\fs48\cf2 from }{\dbch\af2\loch\f1\fs48\cf2 when a request was submitted until the first response }{\dbch\af2\loch\f1\fs48\cf2 is }{\dbch\af2\loch\f1\fs48\cf2 produced}{\dbch\af2\loch\f1\fs48\cf2 .}{\dbch\af2\loch\f1\fs48\cf2 \par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Scheduling Criteria}{\i\dbch\af2\loch\f1\fs64\cf1 , }{\i\dbch\af2\loch\f1\fs64\cf1 cont\uc1\u8217\'d5d}{\i\dbch\af2\loch\f1\fs64\cf1 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf3 Proportionality}{\dbch\af2\loch\f1\fs56\cf3 \par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2\lang1041 \uc1\u8220\'d2}{\dbch\af2\loch\f1\fs48\cf2 Simple}{\dbch\af2\loch\f1\fs48\cf2\lang1041 \uc1\u8221\'d3}{\dbch\af2\loch\f1\fs48\cf2  tasks (as perceived by human users) \line should take little time.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2\lang1041 \uc1\u8220\'d2}{\dbch\af2\loch\f1\fs48\cf2 Complex}{\dbch\af2\loch\f1\fs48\cf2\lang1041 \uc1\u8221\'d3}{\dbch\af2\loch\f1\fs48\cf2  tasks can take longer time}{\dbch\af2\loch\f1\fs48\cf2 .}{\dbch\af2\loch\f1\fs48\cf2 \par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Scheduling Goals\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 First-Come First-Served (FCFS)\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Shortest Job First (SJF)\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Shortest Job First (SJF), }{\i\dbch\af2\loch\f1\fs64\cf1 cont}{\i\dbch\af2\loch\f1\fs64\cf1\lang1041 \uc1\u8217\'d5}{\i\dbch\af2\loch\f1\fs64\cf1 d\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 Shortest Job First (SJF) gives the \line }{\dbch\af2\loch\f1\fs56\cf3 optimal average waiting time }{\dbch\af2\loch\f1\fs56\cf2 \line for a given set of processes.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 How can you know in advance \line each }{\dbch\af2\loch\f1\fs56\cf2 process\uc1\u8217\'d5s }{\dbch\af2\loch\f1\fs56\cf3 expected run time}{\dbch\af2\loch\f1\fs56\cf2 ?\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 It\uc1\u8217\'d5s }{\dbch\af2\loch\f1\fs48\cf2 possible if you run the same jobs frequently}{\dbch\af2\loch\f1\fs48\cf2 .}{\dbch\af2\loch\f1\fs48\cf2 \par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Practice Problem #1\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 Assume:\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\dbch\af2\loch\f1\fs56\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\dbch\af2\loch\f1\fs56\cf2 \par 
+}\pard\plain\ltrpar\s7\li5058\fi-738\fs20\lang1033\li4338 {\dbch\af2\loch\f1\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 What is the }{\dbch\af2\loch\f1\fs56\cf3 average turnaround time }{\dbch\af2\loch\f1\fs56\cf2 with the\line }{\dbch\af2\loch\f1\fs56\cf3 FCFS }{\dbch\af2\loch\f1\fs56\cf2 scheduling algorithm?\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\dbch\af2\loch\f1\fs56\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\dbch\af2\loch\f1\fs56\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 With the }{\dbch\af2\loch\f1\fs56\cf3 SJF }{\dbch\af2\loch\f1\fs56\cf2 scheduling algorithm?\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Shortest Remaining Time (SRT)\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 When a new job (process) arrives, its expected run time is compared to the expected remaining run time }{\dbch\af2\loch\f1\fs56\cf2 of }{\dbch\af2\loch\f1\fs56\cf2 the currently executing process.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 If the new job needs less time to finish \line than the current process, the scheduler \line }{\dbch\af2\loch\f1\fs56\cf3 suspends the current process }{\dbch\af2\loch\f1\fs56\cf2 \line and starts the new job.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf3 New short jobs get good service.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf4 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 As with Shortest Job First, you must know \line in advance each }{\dbch\af2\loch\f1\fs56\cf2 process\uc1\u8217\'d5s }{\dbch\af2\loch\f1\fs56\cf3 expected run time}{\dbch\af2\loch\f1\fs56\cf2 .}{\dbch\af2\loch\f1\fs56\cf2 \par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Round Robin (RR)\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 Each process is assigned a time interval called a }{\dbch\af2\loch\f1\fs56\cf3 quantum }{\dbch\af2\loch\f1\fs56\cf2 during which it is allowed to run}{\dbch\af2\loch\f1\fs56\cf2 .\par 
+}\pard\plain\ltrpar\s7\li5058\fi-738\fs20\lang1033\li4338 {\dbch\af2\loch\f1\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 If the process is still running at the end of its quantum, the CPU is }{\dbch\af2\loch\f1\fs56\cf3 preempted}{\dbch\af2\loch\f1\fs56\cf2  and given to the next process.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 The preempted process moves }{\dbch\af2\loch\f1\fs48\cf2 \line to }{\dbch\af2\loch\f1\fs48\cf2 the end of the ready queue}{\dbch\af2\loch\f1\fs48\cf2 .\par 
+}\pard\plain\ltrpar\s8\li5778\fi-738\fs20\lang1033\li5058 {\dbch\af2\loch\f1\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 Preemption can also occur if a process blocks.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\dbch\af2\loch\f1\fs48\cf2 \par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\dbch\af2\loch\f1\fs48\cf2 \par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\dbch\af2\loch\f1\fs48\cf2 \par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\dbch\af2\loch\f1\fs48\cf2 \par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Round Robin (RR}{\dbch\af2\loch\f1\fs64\cf1 )}{\i\dbch\af2\loch\f1\fs64\cf1 , cont\uc1\u8217\'d5d}{\i\dbch\af2\loch\f1\fs64\cf1 \par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Round Robin (RR), }{\i\dbch\af2\loch\f1\fs64\cf1 cont\uc1\u8217\'d5d}{\i\dbch\af2\loch\f1\fs64\cf1 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 Round Robin example with time quantum 4:\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Time Quantum vs. Context Switch Time\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 A smaller time quantum increases the number \line of processor switches.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 Recall each context switch takes time.\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Scheduling Interactive Systems\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 Turnaround time varies with the time quantum.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf4 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 Each context switch incurs certain OS \line }{\dbch\af2\loch\f1\fs56\cf3 administrative overhead}{\dbch\af2\loch\f1\fs56\cf2 :\par 
+}\pard\plain\ltrpar\s7\li5058\fi-738\fs20\lang1033\li4338 {\dbch\af2\loch\f1\cf2 \par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 Save and load registers and memory maps.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 Switch memory maps.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 Update system tables and lists.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 Flush and reload the cache.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 etc.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Scheduling Interactive }{\dbch\af2\loch\f1\fs64\cf1 Systems}{\i\dbch\af2\loch\f1\fs64\cf1 , cont\uc1\u8217\'d5d}{\i\dbch\af2\loch\f1\fs64\cf1 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 Increasing the time quantum }{\dbch\af2\loch\f1\fs56\cf2 \line can }{\dbch\af2\loch\f1\fs56\cf2 increase response time}{\dbch\af2\loch\f1\fs56\cf2 .\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 Example with 100 }{\dbch\af2\loch\f1\fs56\cf2 msec}{\dbch\af2\loch\f1\fs56\cf2  quantum: \par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 10 users press carriage return simultaneously. \par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 The last user has to wait 1 second for a response\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Highest Priority First (HPF)\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Highest Priority First (HPF), }{\i\dbch\af2\loch\f1\fs64\cf1 cont}{\i\dbch\af2\loch\f1\fs64\cf1\lang1041 \uc1\u8217\'d5}{\i\dbch\af2\loch\f1\fs64\cf1 d\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 HPF scheduling with four priority classes:\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Highest Priority First (HPF), }{\i\dbch\af2\loch\f1\fs64\cf1 cont}{\i\dbch\af2\loch\f1\fs64\cf1\lang1041 \uc1\u8217\'d5}{\i\dbch\af2\loch\f1\fs64\cf1 d\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 A serious problem with HPF is }{\dbch\af2\loch\f1\fs56\cf3 starvation}{\dbch\af2\loch\f1\fs56\cf2 .\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 The lowest priority processes \line may never get to execute.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 A solution is }{\dbch\af2\loch\f1\fs56\cf3 aging}{\dbch\af2\loch\f1\fs56\cf2 .\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 As time progresses, the process scheduler \line }{\dbch\af2\loch\f1\fs48\cf3 automatically raises }{\dbch\af2\loch\f1\fs48\cf2 the process}{\dbch\af2\loch\f1\fs48\cf2\lang1041 \uc1\u8217\'d5}{\dbch\af2\loch\f1\fs48\cf2 s priority.\par 
+}\pard\plain\ltrpar\s6\li4338\fi-738\fs20\lang1033\li3618 {\dbch\af2\loch\f1\fs21\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 HPF can be preemptive.\par 
+}\pard\plain\ltrpar\s3\li2170\fi-738\fs40\lang1033\li1430\fi-688 {\pntext\pard\dbch\af2\loch\f3\fs36 n\tab}{\*\pn\pnlvlblt\pnf3\pnfs36{\pntxtb n}}{\dbch\af2\loch\f1\fs48\cf2 A higher priority task }{\dbch\af2\loch\f1\fs48\cf2 that\uc1\u8217\'d5s }{\dbch\af2\loch\f1\fs48\cf2 arriving can preempt \line a currently executing process with a lower priority}{\dbch\af2\loch\f1\fs48\cf2 .}{\dbch\af2\loch\f1\fs48\cf2 \par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Practice Problem #2\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs39 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs39{\pntxtb o}}{\dbch\af2\loch\f1\fs56\cf2 Assume:\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\dbch\af2\loch\f1\fs40\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\dbch\af2\loch\f1\fs40\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\dbch\af2\loch\f1\fs40\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\dbch\af2\loch\f1\fs40\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\dbch\af2\loch\f1\fs40\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\dbch\af2\loch\f1\fs40\cf2 \par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs28 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs28{\pntxtb o}}{\dbch\af2\loch\f1\fs40\cf2 Draw }{\dbch\af2\loch\f1\fs40\cf3 timelines }{\dbch\af2\loch\f1\fs40\cf2 for }{\dbch\af2\loch\f1\fs40\cf2 the scheduling algorithms \line FCFS, SJF, HPF (}{\dbch\af2\loch\f1\fs40\cf2 nonpreemptive}{\dbch\af2\loch\f1\fs40\cf2 ), and RR.\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs28 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs28{\pntxtb o}}{\dbch\af2\loch\f1\fs40\cf2 What is the }{\dbch\af2\loch\f1\fs40\cf3 turnaround time }{\dbch\af2\loch\f1\fs40\cf2 of each process for each \line of these scheduling algorithms?\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs28 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs28{\pntxtb o}}{\dbch\af2\loch\f1\fs40\cf2 What is the }{\dbch\af2\loch\f1\fs40\cf3 total waiting time }{\dbch\af2\loch\f1\fs40\cf2 for each process for each \line of these scheduling algorithms?\par 
+}\pard\plain\ltrpar\s2\li1430\fi-688\fs48\lang1033\li740\fi-740 {\pntext\pard\dbch\af2\loch\f3\fs28 o\tab}{\*\pn\pnlvlblt\pnf3\pnfs28{\pntxtb o}}{\dbch\af2\loch\f1\fs40\cf2 Which of these scheduling algorithms results in the \line }{\dbch\af2\loch\f1\fs40\cf3 minimum average waiting time }{\dbch\af2\loch\f1\fs40\cf2 over all the processes?\par 
+}\pard\plain\ltrpar\s1\li740\fi-740\fs56\lang1033\li0\fi0\qc {\dbch\af2\loch\f1\fs64\cf1 Practice Problem #2\par 
+}
+}

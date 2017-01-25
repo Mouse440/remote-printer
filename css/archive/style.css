@@ -1,0 +1,293 @@
+html{
+	position: relative;
+    min-height: 100%;
+}
+
+body {
+	background-color: rgb(237, 237, 236);
+	text-align: center;
+	min-height: 100% !important;
+	margin-bottom: 90px;
+}
+
+#max-size-label {
+	font-size: 1.7rem;
+	font-size: 17px;
+}
+
+#container {
+	margin: 25px auto;
+	border-radius: 10px;
+	width: 800px;
+	border-top: 1px solid #fff;
+	background: #fff;
+}
+
+#add_file_space {
+	margin: 0 auto;
+	border:2px solid #CCC;
+	border-radius: 20px;
+	width: 350px;
+	height: 350px;
+	cursor: pointer;
+	-webkit-transition: .5s;  /*For Safari 3.1 to 6.0 */   
+	transition: .5s;
+}
+
+
+#add_file_space label { 
+	cursor: pointer;
+	position: relative;
+	top: 50%;
+	-ms-transform: translateY(-50%); /* IE 9 */
+    -webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
+    transform: translateY(-50%) ;
+}
+
+#add_file_space:hover, .hovered {
+	background-color: #99FFCC;
+}
+
+#warning_space {
+	font-size: 14px;
+}
+
+#form {
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+#ajax-loader1 {
+	display: none;
+	margin: auto;
+}
+
+input[name="file"] {
+	visibility: hidden;
+}
+
+.display-inline {
+	display: inline;
+}
+
+input[name="page-range"] {
+	/*height: 32px;
+	padding: 20px;
+	border-radius: 4px;*/
+	border: 1px solid #ccc;
+	float: right;
+	width: 88% !important;
+}
+
+div[class="active"] {
+	 background-color: rgba(44, 255, 255, 0.3);
+	 /*background-color: rgb(237, 237, 236);*/
+  	 border-color: #4cae4c;
+}
+
+
+select[name='destination'] {
+	max-width: 159px !important; /*Controlling max-width for printer names*/
+
+}
+
+#inputs {
+	position: relative;
+	left: 10px;
+}
+
+#uploaded_file_space {
+	display: none;
+	border: 1px solid white;
+	margin: 0px auto 10px auto;
+	width: 600px;
+}
+
+#uploaded_file_space:hover {
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+#file_name{
+	display: inline;
+}
+
+#pages-space {
+	height: auto;
+	min-height: 90px;
+}
+
+#pages-options-error {
+	color: #a94442;
+	font-size: 1.4rem;
+	font-size: 14px;
+	height: 0px;
+	height: 0rem;
+	right: 10%;
+	margin-top: 3px;
+	overflow: hidden;
+	-webkit-transition: height .1s linear; /* For Safari 3.1 to 6.0 */
+	-moz-transition: height .1s linear;
+	-o-transition: height .1s linear;
+    transition: height .1s linear;
+}
+
+.transition-change {
+	height: 40px !important;
+	height: 4rem !important;
+}
+
+#pages div {
+	width: 180px;
+	float: right;
+}
+
+#radio-all {
+	margin-bottom: 10px;
+}
+
+#radio-other {
+	margin-top: 10px;
+}
+
+#destination-space{
+	margin-bottom: 35px;
+}
+
+.uploaded_file_name {
+	border: 1px solid white;
+	margin-bottom: 0px;
+	text-align: left;
+	/*height: 25px;	border: 1px solid gray;*/
+		
+}
+
+.delete-icon {
+	float: right;
+	margin: 2px 3px 0px 0px;
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+}
+
+.receipt-value {
+	float: right;
+	font-weight: bold;
+}
+
+.printing-option-space {
+	text-align: left;
+	width: 85%;
+	margin: 0 auto;
+}
+
+#destination {
+	float: right;
+}
+
+#submit_btn {
+	margin-bottom: 20px;
+	width: 120px;
+}
+
+#receipt-space {
+	/*border: 1px solid gray;*/
+	width: 85%;
+	text-align: left;
+	margin: 0 auto;
+}
+
+#layout-div{
+	float: right;
+	margin-right: 16px;
+}
+
+#radio-portrait {
+	margin-bottom: 7px;
+}
+
+.modal-footer{
+	position: relative;
+}
+
+#modal-processing-div {
+	text-align:center;
+	width: 160px;
+	position: absolute;
+	margin: 0 32%;
+	display: none;
+}
+
+#upload_image{
+	/*max-width: 64px;
+	max-height: 64px;*/
+}
+
+#two-sided-div {
+	float: right;
+	/*display: none;*/
+}
+
+#copies-div {
+	float: right;
+	padding-right: 0 !important;
+}
+
+#copies-amount{
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+
+/*Bootstrap Popover Custom*/
+.popover-content {
+	color: red;
+	font-weight: bold;
+}
+
+.dragover {
+	border: 5px dashed gray !important;
+}
+
+.permission-btn {
+	display: none;
+}
+
+.custom_color {
+	color: #37DABA;
+}
+
+.custom-footer {
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	height: 70px;
+	background-color: #939393;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	-webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+}
+
+.footer-content > button{
+	font-size: 14px;
+	font-size: 1.4rem;
+}
+
+#credit {
+	color:#2a6496;
+}
+
+#feedback-error-msg{
+	display: none;
+}
+
+@media screen and (max-width: 800px) {
+	#container{
+		width: 100%;
+		margin: 25px 10px;
+		box-sizing: border-box;
+	}
+}
+
