@@ -1,4 +1,6 @@
 <?php
+	require_once(__DIR__."/../config/Config.php");
+
 	/*
 	* This class holds the different algorithm for getting page amount of file base on extension
 	* NOTE: This does not validate extension, relies on the calling function to validate before calling
@@ -177,16 +179,21 @@
 				throw new Exception('Original extension is not pdf.');
 			}
 
+			$cpdfPath = Config::getCpdfPath();
+
 			$fullPath = ($path === NULL) ? $this->storagePath.$this->fileName.'.'.$this->oExtension : $path;
 
 			//Retrieving number of pages in this file using "xpdf"
-		    exec ('pdfinfo ' . $fullPath . ' | awk \'/Pages/ {print $2}\'', $xpdfOutput, $r);
+			$comm = "$cpdfPath -info $fullPath | awk '/Pages/ {print $2}'" ;
+
+		    exec ($comm, $xpdfOutput, $r);
+
 			if( count($xpdfOutput) > 0 ) {
 				$lastIndex = count($xpdfOutput) - 1;				//sometimes $xpdfOutput will yield [0]->'Pages' [1]->Page #
 				return $xpdfOutput[ $lastIndex ]; 					
 				//throw new Exception('Cannot determine page amount!');
 			} else { //no page amount found
-				throw new Exception('Cannot determine page amount! '.$fullPath );
+				throw new Exception("Cannot determine page amount! $comm " . var_dump( $xpdfOutput). var_dump( $r) );
 			}
 		}
 

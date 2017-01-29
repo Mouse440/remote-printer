@@ -1,0 +1,11 @@
+<div ng-controller="CopiesPanelCtrl" class="receipt-value col-xs-8 col-sm-4 col-sm-offset-8 col-md-6 col-lg-6 col-xs-offset-0 col-md-offset-3 col-lg-offset-3" >
+	<div id="copies-div" class="error-text" data-toggle="popover" data-placement="right" data-content="Use a number"> 
+		<div class="input-group col-xs-8 col-sm-8 col-md-12 col-lg-12">
+			<input id="copies-amount" type="text" class="form-control" ng-model="optionsCtrl.copies" maxlength="3">
+			<span class="input-group-btn">
+				<button id="add-copy-button" type="button" class="btn btn-default active incr-btn" value=true ng-click="increment()"> + </button>
+				<button id="subtract-copy-button" type="button" class="btn btn-default active incr-btn" value=false ng-click="increment(-1)"> - </button> 
+			</span>
+		</div>
+	</div>
+</div>

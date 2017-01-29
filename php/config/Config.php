@@ -11,9 +11,9 @@
 class Config {
 
 	//Database credential
-	private static $host = "SECRET";
-	private static $dbuser = "SECRET"; 
-	private static $dbpass = "SECRET";
+	private static $host = "localhost";
+	private static $dbuser = "Printer"; 
+	private static $dbpass = "@sce123";
 
 	//Public variables
 	public static $version = '3'; //application version number, used for db
@@ -31,14 +31,14 @@ class Config {
 									"officer" => 1000
 									);
 
-        public static $role_reset_amount = array (
-	       "administrator" => 200,
-	       "officer" => 200,
-	       "editor" => 200,
-	       "executive" => 1000,
-	       "subscriber" => 30,
-	       "pending_user" => 0,
-	       "alumni" => 0
+    public static $role_reset_amount = array (
+       "administrator" => 200,
+       "officer" => 200,
+       "editor" => 200,
+       "executive" => 1000,
+       "subscriber" => 30,
+       "pending_user" => 0,
+       "alumni" => 0
 	);									
 	public static $gcpConfig = array(   //google cloud printer config
         'refresh_token' => 'SECRET',

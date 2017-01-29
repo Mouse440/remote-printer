@@ -11,7 +11,6 @@ body {
 	margin-bottom: 90px;
 }
 
-
 #add_file_space {
 	/*margin: 0 auto;*/
 	color: #333;
@@ -379,7 +378,7 @@ select[name='destination'] {
 }
 
 #uploaded_file_space {
-	display: none;
+	/*display: none;*/
 	font-size: 1.2rem;
 	/*border: 2px solid #CCC;*/
 	border: 2px solid #E6E6E6;
@@ -422,10 +421,14 @@ select[name='destination'] {
 }
 
 .warning_space {
-	display: none;
+	/*display: none;*/
 	word-wrap: break-word;
 	/*margin-bottom: 15px;*/
 	font-size: 1.2rem;
+}
+
+.progress {
+	padding: 0;
 }
 
 /* Small devices (tablets, 768px and below) */
