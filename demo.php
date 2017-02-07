@@ -123,7 +123,7 @@
 
 					<!-- <hr> -->
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0">
-						<img id ="ajax-loader1" src="images/ajax-loaderv3.gif" >
+						<img id ="ajax-loader1" src="assets/img/ajax-loaderv3.gif" >
 						<br>	
 						<button id="continue_btn" type="button" class="btn btn-default btn-lg active" disabled>Continue</button>
 						<br>

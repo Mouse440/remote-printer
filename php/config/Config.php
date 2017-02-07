@@ -41,9 +41,9 @@ class Config {
        "alumni" => 0
 	);									
 	public static $gcpConfig = array(   //google cloud printer config
-        'refresh_token' => 'SECRET',
-        'client_id' => 'SECRET',
-        'client_secret' => 'SECRET',
+        'refresh_token' => '1/y35n4XvfCA6i_yZthq0bknPZ584xfbp5Y8g9i_UnpjjVh5FCVzj6uBlVQXeeiCfb',
+        'client_id' => '116300599951-ilb9q7i1adiphvn1m8brcglcrs5bnvl4.apps.googleusercontent.com',
+        'client_secret' => 'dodhEs3i1eKhY-1tzSNcrb9c',
         'grant_type' => "refresh_token",
 	);
 
@@ -51,7 +51,7 @@ class Config {
 	* Google cloud printer id 
 	* To get this Printer ID open /gcp/cron.php on the browser
 	*/
-	public static $gcpPrinterId = 'SECRET';  //  Brother_MFC_9340CDW <--located in SCE Room ENGR294
+	public static $gcpPrinterId = 'b9f69e40-43be-f618-95bc-1151a00a6947';  //  Brother_MFC_9340CDW <--located in SCE Room ENGR294
 
 	public static $print_states = array( 1 => "pending",
 										 2 => "held",

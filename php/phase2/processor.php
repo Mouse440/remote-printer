@@ -13,7 +13,7 @@
 	*   Error message is any exception thrown in the program
 	*
 	* 	EXAMPLE OF DATA RECEIVED
-	*	$_POST Array
+	*	$_GET Array
 	*	(
 	*	    [range] => 1-8
 	*	    [copies] => 1
@@ -65,7 +65,7 @@
 		//print_r($transactionData);
 
 		//stage 1
-		$mergedData = array_merge($_POST,$transactionData);					//merge post data
+		$mergedData = array_merge($_GET,$transactionData);					//merge post data
 		
 		// throw new Exception("just a test");
 		
@@ -76,6 +76,7 @@
 		//demo mode
 		// if( $_SESSION['CLOUD_PRINT_DEMO_MODE'] == TRUE ) { 
         	echo json_encode( array('status' => 7, 'pagesLeft' => $pagesLeft) );								//return result
+        	// echo json_encode( array('error' => 7, 'pagesLeft' => $pagesLeft) );
 			exit;
 		// }
 

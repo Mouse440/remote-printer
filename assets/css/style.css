@@ -94,6 +94,14 @@ body {
 	padding-right: 10px !important;*/
 }
 
+#copies-error {
+	padding: 0;
+	margin: 0;
+	color: #a94442;
+	font-size: 14px;
+	margin-top: 5px; 
+}
+
 #credit {
 	color:#2a6496;
 }
@@ -206,7 +214,7 @@ input[name="page-range"] {
 #modal-processing-div {
 	margin-top: 30px;
 	margin-bottom: 7px;
-	display: none;
+	/*display: none;*/
 	/*text-align:center;*/
 	/*width: 160px;*/
 	/*position: absolute;*/
@@ -232,14 +240,15 @@ input[name="page-range"] {
 }
 
 #pages-options-error {
-	display: none;
+	/*display: none;*/
 	color: #a94442;
 	font-size: 1.4rem;
 	font-size: 14px;
 	height: 40px;
 	height: 4rem;
 	right: 10%;
-	margin-top: 3px;
+	margin-top: 5px;
+	margin-left: 0; 
 	/*
 	overflow: hidden;
 	-webkit-transition: height .1s linear; /* For Safari 3.1 to 6.0 *
@@ -276,7 +285,6 @@ input[name="page-range"] {
     left: 0;
     bottom: 0;
     right: 0;
-    display: none;
     width: 60px;
     height: 60px;
     border-radius: 45px;
@@ -289,6 +297,7 @@ input[name="page-range"] {
 
 #print-options {
 	text-align: left;
+	padding-left: 0;
 }
 
 #print-options .hr {
@@ -319,6 +328,14 @@ input[name="page-range"] {
 	/*float: right;*/
 	font-weight: bold;
 	padding-right: 0;
+}
+
+.valid {
+	color: green;
+}
+
+.invalid {
+	color: #a94442;
 }
 
 .right-options {

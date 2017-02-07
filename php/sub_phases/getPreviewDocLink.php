@@ -13,8 +13,12 @@
 	$fileOriginalExt = $_SESSION['PRINT_TRANSACTION']['fileOriginalExt'];
 	$amount = $_SESSION['PRINT_TRANSACTION']['amount'];
 
-	$range = $_POST['pageRange'];
-	$layout = $_POST['layout'];
+	$range = $_GET['pageRange'];
+	$layout = $_GET['layout'];
+
+	// error_log(var_dump($_REQUEST));
+	// error_log(var_dump($_POST));
+	// error_log("range is $range ... layout is $layout");
 
 	$previewManagerStrategy = new PreviewManagerStrategy(
 											new ReflectionClass('Config'),

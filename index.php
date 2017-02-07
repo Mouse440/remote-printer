@@ -18,21 +18,21 @@
 	<meta name="viewport" content="width=device-width">
 
 	<!--bootstrap core-->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css"></li>
+	<link rel="stylesheet" href="assets/css/bootstrap/css/bootstrap.css"></li>
 
 	<!--additional css-->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<!-- <link rel="stylesheet" href="css/spinner/three-quarters.css" type="text/css"> -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/spinner/three-quarters.css" type="text/css">
 
 	<!-- Js libraries-->
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+	<script type="text/javascript" src="assets/libs/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="assets/libs/bootstrap/bootstrap.min.js"></script>
 
-	<script type="text/javascript" src="js/angular/angular.min.js"></script>
+	<script type="text/javascript" src="assets/libs/angular.min.js"></script>
 	<!-- shim is needed to support non-HTML5 FormData browsers (IE8-9)-->
-	<script type="text/javascript" src="js/angular/ng-file-upload/ng-file-upload-all.min.js"></script>
-	<script type="text/javascript" src="js/angular/ng-file-upload/ng-file-upload.min.js"></script>
-	<script type="text/javascript" src="js/angular/angular-modal-service.min.js"></script>
+	<script type="text/javascript" src="assets/libs/ng-file-upload/ng-file-upload-all.min.js"></script>
+	<script type="text/javascript" src="assets/libs/ng-file-upload/ng-file-upload.min.js"></script>
+	<script type="text/javascript" src="assets/libs/angular-modal-service.min.js"></script>
 
 	<!-- <script type="text/javascript" src="js/util/jQuery.typing-0.2.0.min.js"></script> -->
 	<!-- <script type="text/javascript" src="js/util/bootbox.min.js"></script> -->
@@ -94,7 +94,7 @@
 				        <label>
 							<h4>Drag & Drop </h4>
 							<h4> or Touch Here</h4>
-							<img id="upload_image" src="images/cloud-icon_3.png">
+							<img id="upload_image" src="assets/img/cloud-icon_3.png">
 						</label>
 				</div>
 			</form>
@@ -114,9 +114,9 @@
 			</div>
 
 			<!-- Uploaded File Display -->
-			<div ng-cloak ng-if="uploader.filename" id="uploaded_file_space" class="row col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1">
+			<div ng-cloak ng-if="app.filename" id="uploaded_file_space" class="row col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1">
 				<div id="file_name" class='uploaded_file_name panel col-xs-9 col-sm-9 col-md-10 col-lg-10 pull-left' name='label'>
-					{{uploader.filename}}
+					{{app.filename}}
 				</div>
 				<div class='delete-icon col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-0 col-lg-offset-0'>
 					<a class="pull-right" href="javascript:void(0)" ng-click="uploader.clearFile()">Remove</a>
@@ -125,64 +125,30 @@
 		</div>
 
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0">
-			<img id ="ajax-loader1" src="images/ajax-loaderv3.gif" >
+			<img id ="ajax-loader1" src="assets/img/ajax-loaderv3.gif" >
 			<br>	
-			<button id="continue_btn" type="button" class="btn btn-default btn-lg active" ng-click="app.showPrintOptions()" ng-disabled="!app.page_amount">Continue</button>
+			<button id="`" type="button" class="btn btn-default btn-lg active" ng-click="app.showPrintOptions()" ng-disabled="!app.page_amount">Continue</button>
 			<br>
 			<br>
 		</div>
 	</div>
 
-	<!-- Modal -->
-	<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-
-	    	<form id="alert-form" name="alert-form" method="POST"> <!-- id changed from result-form to alert-form -->
-
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        <h3 class="modal-title" id="alert-header"></h3> <!-- id changed from resultLabel to alert-header -->
-		      </div>
-
-		      <div class="modal-body" id="alert-body"> <!-- id changed from result-body to alert-body -->
-		     
-		     	</div> 		
-		      <div class="modal-footer">
-		        <button id='noPermissionBtn' type="button" class="btn btn-default permission-btn" data-dismiss="modal">No, I prefer not.</button>
-		        <button id="permissionBtn" type="button" class="btn btn-primary permission-btn" data-dismiss="modal">Sure! go for it.</button>
-		        <button id="resultPrimaryBtn" type="button" class="btn btn-primary" data-dismiss="modal" >Close</button>
-		      </div>
-		    </form> 
-
-	    </div>
-	  </div>
-	</div>
+	
 </body>
-	<!-- <script type="text/javascript" src="js/layers/ObserverEngine.js"></script>
-	<script type="text/javascript" src="js/layers/Transaction.js"></script>
-	<script type="text/javascript" src="js/layers/upload_zone.js"></script>
-	<script type="text/javascript" src="js/layers/uploaded_file_display.js"></script>
-	<script type="text/javascript" src="js/layers/pdf_preview_controller.js"></script>
-	<script type="text/javascript" src="js/layers/upload_error_display.js"></script>
-	<script type="text/javascript" src="js/layers/continue_button.js"></script>
-	<script type="text/javascript" src="js/layers/copies_panel.js"></script>
-	<script type="text/javascript" src="js/layers/preview_display.js"></script>
-	<script type="text/javascript" src="js/layers/pagerange_panel.js"></script>
-	<script type="text/javascript" src="js/layers/total_panel.js"></script>
-	<script type="text/javascript" src="js/layers/allowance_panel.js"></script>
-	<script type="text/javascript" src="js/layers/layout_panel.js"></script>
-	<script type="text/javascript" src="js/layers/two_sided_option.js"></script>
-	<script type="text/javascript" src="js/layers/print_button.js"></script>
-	<script type="text/javascript" src="js/layers/print_status_panel.js"></script> -->
-
-
-	<!-- <script type="text/javascript" src="js/layers/upload_form.js"></script> 
-	<script type="text/javascript" src="js/layers/front_page.js"></script>
-	<script type="text/javascript" src="js/layers/confirm_page.js"></script>
-	<script type="text/javascript" src="js/layers/miscellaneous.js"></script>
-	<script type="text/javascript" src="js/layers/confirmation_form.js"></script>
-	-->
-	<!-- <script type="text/javascript" src="js/layers/main.js"></script> -->
-	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/shared/endpoints/endpoints.value.js"></script>
+	<script type="text/javascript" src="app/shared/endpoints/endpoints.request.service.js"></script>
+	<script type="text/javascript" src="app/shared/options.utilities.service.js"></script>
+	<script type="text/javascript" src="app/components/print_options_form/pluralize.filter.js"></script>
+	<script type="text/javascript" src="app/components/print_options_form/print.allowance.color.filter.js"></script>
+	<script type="text/javascript" src="app/components/print_options_form/print.options.controller.js"></script>
+	<script type="text/javascript" src="app/components/copies_panel/copies.panel.directive.js"></script>
+	<script type="text/javascript" src="app/components/copies_panel/copies.panel.controller.js"></script>
+	<script type="text/javascript" src="app/components/pagerange_panel/pagerange.panel.directive.js"></script>
+	<script type="text/javascript" src="app/components/pagerange_panel/pagerange.input.directive.js"></script>
+	<script type="text/javascript" src="app/components/pagerange_panel/pagerange.controller.js"></script>
+	<script type="text/javascript" src="app/components/preview/print.previewer.directive.js"></script>
+	<script type="text/javascript" src="app/components/upload/upload.controller.js"></script>
+	<script type="text/javascript" src="app/components/app/app.controller.js"></script>
+	<script type="text/javascript" src="app/app.module.js"></script>
 </html>
