@@ -193,7 +193,7 @@
 				return $xpdfOutput[ $lastIndex ]; 					
 				//throw new Exception('Cannot determine page amount!');
 			} else { //no page amount found
-				throw new Exception("Cannot determine page amount! $comm " . var_dump( $xpdfOutput). var_dump( $r) );
+				throw new Exception('Cannot determine page amount! '.$fullPath );
 			}
 		}
 

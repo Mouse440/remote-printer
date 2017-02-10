@@ -239,7 +239,7 @@ class UploadedFile {
 	         if( move_uploaded_file( $this->fileArr["tmp_name"], $newFilePath ) ){ //moving file to upload folder $newFilePath
 	         	$this->fileArr["tmp_name"] = $newFilePath; //assign new file path
 	         } else {
-	            throw new Exception("Unable to save file.");
+	            throw new Exception("Unable to save file. ");
 	         }
 	      } else {
 	      		throw new Exception("File did not upload.");
