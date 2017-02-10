@@ -164,7 +164,7 @@ class PrintAdapter{
       //store file in file_log directory with orignal name character escaped
       if( !file_exists($this->dirPath . $fName) && is_uploaded_file( $_FILES["file"]["tmp_name"]) ) {
          if( !move_uploaded_file( $_FILES["file"]["tmp_name"] , $this->dirPath . $fName ) ){ //moving file to upload folder
-            storeError(" Unable to save file. ss");
+            storeError(" Unable to save file.");
          } 
       } 
    }

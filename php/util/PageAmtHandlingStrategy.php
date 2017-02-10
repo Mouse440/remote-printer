@@ -278,7 +278,7 @@
 				$pageAmount = trim( $numOfPagesArr[1] );
 				return $pageAmount;
 			} else {
-				throw new Exception( 'Cannot determine .doc page amount. Try uploading a pdf copy. ' . implode(' ',$arr) . " $r " . $fileTempName );
+				throw new Exception( 'Cannot determine .doc page amount. Try uploading a pdf copy.' );
 			}
 			// $pdfCopyPath = $this->convertFileToPDF();
 			// return parent::findAmount($pdfCopyPath);
