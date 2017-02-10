@@ -143,7 +143,6 @@ var Transaction = (function(ObsEngine){
 		formData.append('layout', transactionData.layout);
 		formData.append('total', transactionData.total);
 
-
 		//send data to server
 		$.ajax({
 			data : formData,
@@ -217,7 +216,7 @@ var Transaction = (function(ObsEngine){
 	}
 
 	function previewRequestController(jqXHR){
-		if(previewXHRs.length > 0) { //has xhrs
+		if(previewXHRs.length > 0) { //hagetPreviewDocLinks xhrs
 			abortRequests(previewXHRs);
 		} 
 		previewXHRs.push(jqXHR);

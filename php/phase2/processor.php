@@ -13,7 +13,7 @@
 	*   Error message is any exception thrown in the program
 	*
 	* 	EXAMPLE OF DATA RECEIVED
-	*	$_POST Array
+	*	$_GET Array
 	*	(
 	*	    [range] => 1-8
 	*	    [copies] => 1
@@ -65,7 +65,7 @@
 		//print_r($transactionData);
 
 		//stage 1
-		$mergedData = array_merge($_POST,$transactionData);					//merge post data
+		$mergedData = array_merge($_GET,$transactionData);					//merge post data
 		
 		// throw new Exception("just a test");
 		

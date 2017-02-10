@@ -1,0 +1,10 @@
+<div ng-controller="UploadedDisplayCtrl as uploadedDisplayCtrl">
+	<div ng-cloak ng-if="uploadedDisplayCtrl.options.filename" id="uploaded_file_space" class="row col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1">
+		<div id="file_name" class='uploaded_file_name panel col-xs-9 col-sm-9 col-md-10 col-lg-10 pull-left' name='label'>
+			{{uploadedDisplayCtrl.options.filename}}
+		</div>
+		<div class='delete-icon col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-0 col-lg-offset-0'>
+			<a class="pull-right" href="javascript:void(0)" ng-click="uploadedDisplayCtrl.clearFile()">Remove</a>
+		</div>
+	</div>
+</div>

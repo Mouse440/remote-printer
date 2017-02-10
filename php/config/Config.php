@@ -11,9 +11,9 @@
 class Config {
 
 	//Database credential
-	private static $host = "SECRET";
-	private static $dbuser = "SECRET"; 
-	private static $dbpass = "SECRET";
+	private static $host = "";
+	private static $dbuser = ""; 
+	private static $dbpass = "";
 
 	//Public variables
 	public static $version = '3'; //application version number, used for db
@@ -31,19 +31,19 @@ class Config {
 									"officer" => 1000
 									);
 
-        public static $role_reset_amount = array (
-	       "administrator" => 200,
-	       "officer" => 200,
-	       "editor" => 200,
-	       "executive" => 1000,
-	       "subscriber" => 30,
-	       "pending_user" => 0,
-	       "alumni" => 0
+    public static $role_reset_amount = array (
+       "administrator" => 200,
+       "officer" => 200,
+       "editor" => 200,
+       "executive" => 1000,
+       "subscriber" => 30,
+       "pending_user" => 0,
+       "alumni" => 0
 	);									
 	public static $gcpConfig = array(   //google cloud printer config
-        'refresh_token' => 'SECRET',
-        'client_id' => 'SECRET',
-        'client_secret' => 'SECRET',
+        'refresh_token' => '',
+        'client_id' => '',
+        'client_secret' => '',
         'grant_type' => "refresh_token",
 	);
 
@@ -51,7 +51,7 @@ class Config {
 	* Google cloud printer id 
 	* To get this Printer ID open /gcp/cron.php on the browser
 	*/
-	public static $gcpPrinterId = 'SECRET';  //  Brother_MFC_9340CDW <--located in SCE Room ENGR294
+	public static $gcpPrinterId = '';  //  Brother_MFC_9340CDW <--located in SCE Room ENGR294
 
 	public static $print_states = array( 1 => "pending",
 										 2 => "held",
