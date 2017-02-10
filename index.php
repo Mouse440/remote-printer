@@ -114,20 +114,13 @@
 			</div>
 
 			<!-- Uploaded File Display -->
-			<div ng-cloak ng-if="app.filename" id="uploaded_file_space" class="row col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1">
-				<div id="file_name" class='uploaded_file_name panel col-xs-9 col-sm-9 col-md-10 col-lg-10 pull-left' name='label'>
-					{{app.filename}}
-				</div>
-				<div class='delete-icon col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-0 col-lg-offset-0'>
-					<a class="pull-right" href="javascript:void(0)" ng-click="uploader.clearFile()">Remove</a>
-				</div>
-			</div>
+			<uploaded-display></uploaded-display>
 		</div>
 
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0">
 			<img id ="ajax-loader1" src="assets/img/ajax-loaderv3.gif" >
 			<br>	
-			<button id="`" type="button" class="btn btn-default btn-lg active" ng-click="app.showPrintOptions()" ng-disabled="!app.page_amount">Continue</button>
+			<button id="`" type="button" class="btn btn-default btn-lg active" ng-click="app.showPrintOptions()" ng-disabled="!app.options.page_amount">Continue</button>
 			<br>
 			<br>
 		</div>
@@ -139,6 +132,10 @@
 	<script type="text/javascript" src="app/shared/endpoints/endpoints.value.js"></script>
 	<script type="text/javascript" src="app/shared/endpoints/endpoints.request.service.js"></script>
 	<script type="text/javascript" src="app/shared/options.utilities.service.js"></script>
+	<script type="text/javascript" src="app/components/execute_print/execute.print.controller.js"></script>
+	<script type="text/javascript" src="app/components/uploaded_display/uploaded.display.controller.js"></script>
+	<script type="text/javascript" src="app/components/uploaded_display/uploaded.display.directive.js"></script>
+	<script type="text/javascript" src="app/components/preview/print.previewer.controller.js"></script>
 	<script type="text/javascript" src="app/components/print_options_form/pluralize.filter.js"></script>
 	<script type="text/javascript" src="app/components/print_options_form/print.allowance.color.filter.js"></script>
 	<script type="text/javascript" src="app/components/print_options_form/print.options.controller.js"></script>

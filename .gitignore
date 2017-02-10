@@ -4,6 +4,6 @@ php/file_log/
 php/util/weekly_reset/last_updated_date_DO_NOT_DELETE.json
 php/job_state_reporter/job-state
 temporary_file_storage/*
-
+node_module/
 .DS_Store
 

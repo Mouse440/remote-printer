@@ -1,6 +1,8 @@
-PrinterApp.controllersModule.controller('PagerangeCtrl', ['$scope', 'OptionsUtilities', function($scope, OptionsUtilities) {
+PrinterApp.controllersModule.controller('PagerangeCtrl', ['$scope', 'OptionsService', function($scope, options) {
 
-	var defaultPageRange = $scope.$parent.optionsCtrl.pagerange;
+	var vm = this;
+
+	vm.options = options;
 
 	$scope.radioAllSelected = true;
 	$scope.radioOtherSelected = false;
@@ -8,7 +10,7 @@ PrinterApp.controllersModule.controller('PagerangeCtrl', ['$scope', 'OptionsUtil
 	$scope.checkRadioAll = function() {
 		$scope.radioAllSelected = true;
 		$scope.radioOtherSelected = false;
-		$scope.$parent.optionsCtrl.pagerange = defaultPageRange;
+		vm.options.pagerange = vm.options.originalPagerange;
 	}
 
 	$scope.checkRadioOther = function() {
@@ -16,5 +18,8 @@ PrinterApp.controllersModule.controller('PagerangeCtrl', ['$scope', 'OptionsUtil
 		$scope.radioOtherSelected = true;
 	}
 
-	$scope.getRangeAmount = OptionsUtilities.getRangeAmount;
-}]);
+	$scope.updateRangeAmount = function(range) {
+		vm.options.pagerangeAmount = options.getRangeAmount(range, vm.options.page_amount);
+	}
+}]); 
+

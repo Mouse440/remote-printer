@@ -74,11 +74,10 @@
 		$pagesLeft = intval( $mergedData['allowance'] ) - intval( $mergedData['total'] );
 
 		//demo mode
-		// if( $_SESSION['CLOUD_PRINT_DEMO_MODE'] == TRUE ) { 
+		if( $_SESSION['CLOUD_PRINT_DEMO_MODE'] == TRUE ) { 
         	echo json_encode( array('status' => 7, 'pagesLeft' => $pagesLeft) );								//return result
-        	// echo json_encode( array('error' => 7, 'pagesLeft' => $pagesLeft) );
 			exit;
-		// }
+		}
 
 		/*
 		USB Printer Flow

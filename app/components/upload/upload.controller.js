@@ -1,5 +1,5 @@
-PrinterApp.controllersModule.controller('UploadCtrl', ['$scope', '$http', 'EndpointRequest', '$timeout', 
-										function ($scope, $http, EndpointRequest, $timeout) {
+PrinterApp.controllersModule.controller('UploadCtrl', ['$scope', '$http', '$timeout', 'EndpointRequest', 'OptionsService',
+										function ($scope, $http, $timeout, EndpointRequest, options) {
 	$scope.$watch(angular.bind(this, function(){
     	return this.file;
     }), function(newVal) {
@@ -18,8 +18,14 @@ PrinterApp.controllersModule.controller('UploadCtrl', ['$scope', '$http', 'Endpo
             		file: file
             	}).then(function (resp) {		//success
                 	vm.progressPercentage = -1;
-                	$scope.$emit('uploadDataFetched', resp);
-                }, function(resp) {		//error handling
+
+                    options.filename = resp.config.data.file.name;
+                    options.allowance = resp.data.allowance;
+                    options.previewLink = resp.data.previewLinks;
+                    options.page_amount = resp.data.amount;
+
+                	// $scope.$emit('uploadDataFetched', resp);
+                }, function(response) {		//error handling
 					if (response.status > 0)
 					        vm.error = response.status + ': ' + response.data;
                 	
@@ -32,8 +38,4 @@ PrinterApp.controllersModule.controller('UploadCtrl', ['$scope', '$http', 'Endpo
             } 
         }
     };
-
-    vm.clearFile = function() {
-    	$scope.$emit('uploadDataRemove');
-    }
 }]);

@@ -1,5 +1,30 @@
-PrinterApp.servicesModule.service('OptionsUtilities', function() {
-	this.getRangeAmount = function(range, amount) {
+PrinterApp.servicesModule.factory('OptionsService', ["EndpointRequest", function(EndpointRequest) {
+	var vm = {};
+
+	function init() {
+		vm.allowance = "";
+		vm.pagerange = "";
+		vm.pagerangeAmount = "";
+		vm.originalPagerange = "";
+		vm.page_amount = "";
+		vm.copies = 1;
+		vm.twoSided = true;
+		vm.layout = 'portrait';
+		vm.previewLink = "";
+		vm.filename = "";
+
+		vm.printInProgress = false;
+		vm.printJobDone = false;
+		vm.printJobError = "";
+	};	
+	init();
+
+	vm.total = function() {
+		var total = vm.copies * vm.pagerangeAmount || 0;
+		return total;
+	}
+
+	vm.getRangeAmount = function(range, amount) {
 		if( !range ) {
 			return 0;
 		} else {
@@ -21,4 +46,11 @@ PrinterApp.servicesModule.service('OptionsUtilities', function() {
 			return result;
 		}
 	}
-})
+
+	vm.clearTransaction = function() {
+		init(); //reinit to clear reset all values
+		EndpointRequest.clearFile();
+	}
+
+	return vm;
+}]);
