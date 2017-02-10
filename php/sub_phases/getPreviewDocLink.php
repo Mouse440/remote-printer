@@ -16,10 +16,6 @@
 	$range = $_GET['pageRange'];
 	$layout = $_GET['layout'];
 
-	// error_log(var_dump($_REQUEST));
-	// error_log(var_dump($_POST));
-	// error_log("range is $range ... layout is $layout");
-
 	$previewManagerStrategy = new PreviewManagerStrategy(
 											new ReflectionClass('Config'),
 											$filePrefix,

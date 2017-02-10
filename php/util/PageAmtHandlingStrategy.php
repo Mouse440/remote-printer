@@ -184,8 +184,7 @@
 			$fullPath = ($path === NULL) ? $this->storagePath.$this->fileName.'.'.$this->oExtension : $path;
 
 			//Retrieving number of pages in this file using "xpdf"
-			$comm = "$cpdfPath -info $fullPath | awk '/Pages/ {print $2}'" ;
-
+			$comm = "$cpdfPath -info $fullPath | awk '/Pages/ {print $2}'";
 		    exec ($comm, $xpdfOutput, $r);
 
 			if( count($xpdfOutput) > 0 ) {
@@ -193,7 +192,7 @@
 				return $xpdfOutput[ $lastIndex ]; 					
 				//throw new Exception('Cannot determine page amount!');
 			} else { //no page amount found
-				throw new Exception("Cannot determine page amount! $comm " . var_dump( $xpdfOutput). var_dump( $r) );
+				throw new Exception('Cannot determine page amount! '.$fullPath );
 			}
 		}
 
@@ -278,7 +277,7 @@
 				$pageAmount = trim( $numOfPagesArr[1] );
 				return $pageAmount;
 			} else {
-				throw new Exception( 'Cannot determine .doc page amount. Try uploading a pdf copy. ' . implode(' ',$arr) . " $r " . $fileTempName );
+				throw new Exception( 'Cannot determine .doc page amount. Try uploading a pdf copy.' );
 			}
 			// $pdfCopyPath = $this->convertFileToPDF();
 			// return parent::findAmount($pdfCopyPath);

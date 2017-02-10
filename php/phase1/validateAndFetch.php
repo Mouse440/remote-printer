@@ -21,7 +21,6 @@ try {
 		global $uploadedFile;
 		
 		$uploadedFile = new UploadedFile($_FILES['file']);
-
 		$uploadedFile->validateFile(); //validate file against criteria set			
 		$uploadedFile->storeFile();	//store file in temporary storage
 
@@ -31,8 +30,7 @@ try {
 		* the extension is PDF. A theory why this bug happened is dued to the complexity of the inheritance of the
 		* the class structure. This theory still needs to be tested to confirm.
 		*/
-		$amount = $uploadedFile->getPageAmount();  
-	
+		$amount = $uploadedFile->getPageAmount();
 		$filePrefix = $uploadedFile->getFilePrefix();
 		$fileOriginalExt = $uploadedFile->getOriginalFileExtension();
 
